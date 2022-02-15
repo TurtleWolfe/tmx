@@ -51,14 +51,14 @@ export default function Header() {
                 alignItems: "center",
               }}
             >
+              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                🏍️ tMX
+              </Typography>
               <img
                 alt="joy of coding logo"
                 src={img_logo}
                 style={{ height: "64px", padding: "8px", marginRight: "8px" }}
               />
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                Cookbook
-              </Typography>
             </Box>
             <Stack direction="row" alignItems="center" spacing={8}>
               <Tabs
