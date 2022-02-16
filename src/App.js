@@ -27,7 +27,7 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <div style={{
-        minHeight: "85vh"
+        minHeight: "75vh"
       }}>
         <Routes>
           <Route path="/" element={<Home />} />
