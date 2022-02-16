@@ -1,24 +1,47 @@
-import { Paper, Typography } from "@mui/material";
+import {
+  Link,
+  Paper,
+  Typography
+} from "@mui/material";
 
 export default function Footer(props) {
   return (
     <Paper
       sx={{
         width: 1,
-        minHeight: "180px",
-        bgcolor: "#f8f8ff",
-        borderTop: 4,
-        borderColor: "#EEEEFF",
+        minHeight: "30px",
+        maxHeight: "60px",
+        // bgcolor: "#f8f8ff",
+        bgcolor: "primary.main",
+        borderTop: 2,
+        borderColor: "secondary.main",
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        bottom: 0,
         position: "fixed",
+        bottom: 0,
       }}
     >
-      <Typography variant="h5" color="#b6b6db">
-        © 2022 Joy of Coding
+      <Typography
+        variant="h5"
+        color="secondary.main"
+      >
+        <Link
+          color="secondary.main"
+          href="https://github.com/TurtleWolfe/tmx"
+          underline="hover"
+        >
+          <h3>
+            <span
+              role="img"
+              aria-label="moto cross"
+            >
+              🏍️
+            </span>
+            {' © 2022 tMX '}
+          </h3>
+        </Link>
       </Typography>
     </Paper>
   );
