@@ -1,5 +1,5 @@
 .splashBG {
-    background: url('../img/Oval-3.png'),url('../img/Oval-4.png'),url('../img/Oval-5.png'),url('../img/Oval-6.png'),url('../img/Oval-7.png'),;
+    background: url('../img/Oval-3.png'),url('../img/Oval-4.png'),url('../img/Oval-5.png'),url('../img/Oval-6.png'),url('../img/Oval-7.png');
     background-repeat: no-repeat;
     background-position: center;
     width: 400;
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 50%;
+    
 }
 
 .image {
