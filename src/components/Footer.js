@@ -19,7 +19,7 @@ export default function Footer(props) {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        position: "fixed",
+        position: "absolute",
         bottom: 0,
       }}
     >
