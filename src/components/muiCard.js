@@ -32,23 +32,25 @@ export default function MultiActionAreaCard({ mapImage, mapTitle, mapDescription
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {mapDescription}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+            {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
             blanditiis tenetur unde suscipit, quam beatae rerum inventore
             consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-            fugiat deleniti? Eum quasi quidem quibusdam.
+            fugiat deleniti? Eum quasi quidem quibusdam. */}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions
-      // bgcolor="secondary.main"
-      // color="secondary"
+        sx={{
+          bgcolor: "secondary.main",
+          // color="secondary"
+        }}
       >
         <Button
           size="small"
-          color="secondary"
+        // color="secondary"
         >
-          {/* Share */}
-          {mapLink}
+          Share
+          {" " + mapLink}
         </Button>
       </CardActions>
     </Card>
