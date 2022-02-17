@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-export default function MultiActionAreaCard(mapImage, mapTitle, mapDescription, mapLink) {
+export default function MultiActionAreaCard({ mapImage, mapTitle, mapDescription, mapLink }) {
   return (
     <Card sx={{
       bgcolor: "primary.main",
@@ -22,13 +22,13 @@ export default function MultiActionAreaCard(mapImage, mapTitle, mapDescription, 
           // image="/static/images/cards/contemplative-reptile.jpg"
           // alt="green iguana"
           alt="funky illustration"
-          // src={mapImage}
-          src={svg_art}
+          src={mapImage}
+        // src={svg_art}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            tMX
-            {/* {mapTitle} */}
+            {/* tMX */}
+            {mapTitle}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {mapDescription}
@@ -47,8 +47,8 @@ export default function MultiActionAreaCard(mapImage, mapTitle, mapDescription, 
           size="small"
           color="secondary"
         >
-          Share
-          {/* {mapLink} */}
+          {/* Share */}
+          {mapLink}
         </Button>
       </CardActions>
     </Card>
