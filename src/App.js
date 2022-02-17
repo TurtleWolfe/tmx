@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
 import Header from "./components/composites/Header";
+import MuiCard from "./components/muiCard";
 import Footer from "./components/Footer";
 
 import RecipeList from "./pages/RecipeList";
@@ -52,6 +53,7 @@ export default function App() {
           <Route path="/login" element={<LogIn />} />
         </Routes>
       </div>
+      <MuiCard />
       <Footer />
     </BrowserRouter>
   );
