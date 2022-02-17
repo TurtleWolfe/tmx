@@ -11,7 +11,13 @@ export default function MultiActionAreaCard({ mapImage, mapTitle, mapDescription
   return (
     <Card sx={{
       bgcolor: "primary.main",
-      maxWidth: 345
+      maxWidth: 345,
+      margin: "auto",
+      marginTop: "1rem",
+      marginBottom: "1rem",
+      padding: "1rem",
+      borderRadius: "0.5rem",
+      boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
     }}
       variant="outlined"
     >
@@ -42,7 +48,8 @@ export default function MultiActionAreaCard({ mapImage, mapTitle, mapDescription
       <CardActions
         sx={{
           bgcolor: "secondary.main",
-          // color="secondary"
+          // color="secondary",
+          borderRadius: "0.5rem",
         }}
       >
         <Button
