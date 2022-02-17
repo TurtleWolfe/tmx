@@ -1,5 +1,5 @@
 // import * as React from 'react';
-import svg_art from "../assets/coding_art.svg";
+// import svg_art from "../assets/coding_art.svg";
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
