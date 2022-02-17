@@ -1,46 +1,56 @@
-import {
-  Link,
-  Paper,
-  Typography
-} from "@mui/material";
+// import * as React from 'react';
+import svg_art from "../assets/coding_art.svg";
 
-export default function MuiCard(props) {
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+
+export default function MultiActionAreaCard(mapImage, mapTitle, mapDescription, mapLink) {
   return (
-    <Paper
-      sx={{
-        width: 1,
-        minHeight: "30px",
-        // maxHeight: "60px",
-        // bgcolor: "#f8f8ff",
-        bgcolor: "primary.main",
-        borderTop: 1,
-        borderColor: "secondary.main",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        // position: "absolute",
-        // bottom: 0,
-      }}
+    <Card sx={{
+      bgcolor: "primary.main",
+      maxWidth: 345
+    }}
+      variant="outlined"
     >
-      <Typography
-        variant="h5"
-        color="secondary.main"
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          // image="/static/images/cards/contemplative-reptile.jpg"
+          // alt="green iguana"
+          alt="funky illustration"
+          // src={mapImage}
+          src={svg_art}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            tMX
+            {/* {mapTitle} */}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {mapDescription}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+            blanditiis tenetur unde suscipit, quam beatae rerum inventore
+            consectetur, neque doloribus, cupiditate numquam dignissimos laborum
+            fugiat deleniti? Eum quasi quidem quibusdam.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions
+      // bgcolor="secondary.main"
+      // color="secondary"
       >
-        <Link
-          color="secondary.main"
-          href="https://github.com/TurtleWolfe/tmx"
-          underline="hover"
+        <Button
+          size="small"
+          color="secondary"
         >
-          <span
-            role="img"
-            aria-label="moto cross"
-          >
-            🏍️
-          </span>
-          {'muiCard'}
-        </Link>
-      </Typography>
-    </Paper>
+          Share
+          {/* {mapLink} */}
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
