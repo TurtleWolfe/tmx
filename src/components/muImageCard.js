@@ -1,10 +1,21 @@
-import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import HeartIcon from '@mui/icons-material/HeartBroken';
+import { useState } from "react";
+import {
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  // ImageListItemText,
+  // ImageListItemImage,
+  // ImageListItemSecondaryAction,
+  IconButton,
+} from '@mui/material';
+import {
+  Favorite,
+  HeartBroken,
+  // HeartIcon,
+  StarBorder,
+  StarBorderOutlined,
+  StarRate
+} from '@mui/icons-material';
 
 function srcset(image, width, height, rows = 1, cols = 1) {
   return {
@@ -15,18 +26,20 @@ function srcset(image, width, height, rows = 1, cols = 1) {
 }
 
 export default function CustomImageList() {
+  const [starred, setStarred] = useState(false);
   return (
     <ImageList
       sx={{
-        width: 500,
+        width: "70%",
         height: 450,
         // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
         transform: 'translateZ(0)',
       }}
       rowHeight={200}
       gap={1}
-    // variant="quilted"
-    // variant="standard"
+      // variant="quilted"
+      // variant="standard"
+      varinant="masonry"
     >
       {itemData.map((item) => {
         const cols = item.featured ? 2 : 1;
@@ -53,10 +66,15 @@ export default function CustomImageList() {
               position="top"
               actionIcon={
                 <IconButton
-                  sx={{ color: 'primary.main' }}
+                  // sx={{ color: 'primary.main' }}
+                  color={starred ? "primary" : "error"}
                   aria-label={`star ${item.title}`}
+                  onClick={() => {
+                    setStarred(!starred);
+                  }}
                 >
-                  <HeartIcon />
+                  {starred ? <StarBorder /> : <StarRate />}
+                  {starred ? <HeartBroken /> : <Favorite />}
                 </IconButton>
               }
               actionPosition="left"

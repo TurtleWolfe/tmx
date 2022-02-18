@@ -20,12 +20,12 @@ export default function Home() {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
       </Box> */}
       <MuImageCard />
-      {/* <MuiCard
+      <MuiCard
         mapImage={svg_art}
         mapTitle="tMX"
         mapDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
         mapLink="https://www.google.com"
-      /> */}
+      />
     </Box>
   );
 }
