@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import svg_art from "../assets/coding_art.svg";
 import MuiCard from "../components/muiCard";
-import MuImageCard from "../components/muImageCard";
+import FaveList from "../components/faveList";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       {/* <Box sx={{ width: "50%" }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
       </Box> */}
-      <MuImageCard />
+      <FaveList />
       <MuiCard
         mapImage={svg_art}
         mapTitle="tMX"
