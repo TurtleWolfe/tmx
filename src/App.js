@@ -14,6 +14,7 @@ import Profile from "./pages/Profile";
 import { useAuthContext } from "./hooks/AuthContext";
 import { fetchUserData } from "./services/Auth";
 import PrivateRoute from "./components/utility/PrivateRoute";
+import SplashScreen from "./components/SplashScreen";
 
 export default function App() {
   const { setUserData } = useAuthContext();
@@ -26,11 +27,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <div
-        style={{
-          minHeight: "85vh",
-        }}
-      >
+      <div style={{ minHeight: "75vh" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/help" element={<Help />} />
@@ -52,6 +49,7 @@ export default function App() {
           />
           <Route path="/testing" element={<TestingArea />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/splash" element={<SplashScreen />} />
         </Routes>
       </div>
       <Footer />

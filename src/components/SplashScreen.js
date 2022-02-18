@@ -2,9 +2,14 @@ import { Box } from "@mui/system";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/teamMX-logo.png";
-import "../assets/css/style.css";
-import { ClipLoader } from "react-spinners";
-import { Button, ButtonGroup, Slide, Typography } from "@mui/material";
+import "../assets/css/SplashScreen.css";
+import {
+  Button,
+  ButtonGroup,
+  CircularProgress,
+  Slide,
+  Typography,
+} from "@mui/material";
 
 export default function SplashScreen(props) {
   const [loading, setLoading] = useState(false);
@@ -22,24 +27,38 @@ export default function SplashScreen(props) {
       sx={{
         display: "flex",
         flexDirection: "column",
-        width: "100%",
-        height: "100vh",
+        height: "85vh",
         background: "linear-gradient(180deg, #e20e2d, #aa0f26)",
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
       }}
     >
-      <Box className="splashBG">
+      <Box
+        className="splashBG"
+        sx={{
+          width: 1,
+          height: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: "20%",
+        }}
+      >
         <div>
           <img src={logo} alt="Team Logo" width={400} />
         </div>
         <div>
           {loading ? (
             // While loading show loader image from react-spinners
-            <div className="sweet-loading">
-              <ClipLoader color="#edc314" loading={loading} size={50} />
-            </div>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <CircularProgress color="secondary" size={50} />
+            </Box>
           ) : (
             //After loading is complete, show buttons
             <Slide direction="up" in={!loading}>

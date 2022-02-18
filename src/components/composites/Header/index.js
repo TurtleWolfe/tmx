@@ -33,7 +33,7 @@ export default function Header() {
   const [logOutModalOpen, setLogOutModalOpen] = useState(false);
 
   //Test code for swapping headers
-  const showHeader = useMediaQuery("(min-width:600px)");
+  const showMobileHeader = useMediaQuery("(max-width:600px)");
 
   const handleModalOpen = () => {
     setLogOutModalOpen(true);
@@ -45,7 +45,7 @@ export default function Header() {
 
   return (
     <>
-      {!showHeader ? (
+      {showMobileHeader ? (
         <MobileHeader
           mainHeader="Hello, Guest!"
           subHeader="Where are we going next?"
