@@ -11,9 +11,7 @@ import {
 import {
   Favorite,
   HeartBroken,
-  // HeartIcon,
   StarBorder,
-  StarBorderOutlined,
   StarRate
 } from '@mui/icons-material';
 
