@@ -32,9 +32,10 @@ export default function CustomImageList() {
         height: 450,
         // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
         transform: 'translateZ(0)',
+        borderRadius: "0.5rem",
       }}
       rowHeight={200}
-      gap={1}
+      gap={10}
       // variant="quilted"
       // variant="standard"
       varinant="masonry"
@@ -48,6 +49,11 @@ export default function CustomImageList() {
             key={item.img}
             cols={cols}
             rows={rows}
+
+            sx={{
+              overflow: "hidden",
+              borderRadius: "0.5rem",
+            }}
           >
             <img
               {...srcset(item.img, 250, 200, rows, cols)}
@@ -59,6 +65,7 @@ export default function CustomImageList() {
                 background:
                   'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
                   'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                color: 'primary'
               }}
               title={item.name}
               subtitle={item.formatted_address}
