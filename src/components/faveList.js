@@ -192,7 +192,7 @@ const itemData = [
       compound_code: "7C2Q+MH Augusta, West Virginia",
       global_code: "87F37C2Q+MH"
     },
-    rating: 4.5,
+    rating: 1.1,
     reference: "ChIJ04vlzaqEtYkRLic-0rbpNT4",
     types: [
       "point_of_interest",
