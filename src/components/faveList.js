@@ -65,15 +65,18 @@ export default function CustomImageList() {
                 background:
                   'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
                   'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                width: "90%",
+                borderRadius: "0.5rem",
                 color: 'primary'
               }}
               title={item.name}
               subtitle={item.formatted_address}
-              position="top"
+              color="primary"
+              // position="top"
               actionIcon={
                 <IconButton
                   // sx={{ color: 'primary.main' }}
-                  color={starred ? "primary" : "error"}
+                  color={starred ? "primary.main" : "error"}
                   aria-label={`star ${item.title}`}
                   onClick={() => {
                     setStarred(!starred);
