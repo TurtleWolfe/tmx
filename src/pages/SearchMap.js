@@ -1,6 +1,5 @@
-import { Box } from "@mui/system";
+import { Box } from "@mui/material";
 import Map from "../components/composites/Map";
-import Header from "../components/composites/Header";
 
 export default function SearchMap() {
   return (
@@ -13,7 +12,6 @@ export default function SearchMap() {
           flexDirection: "row",
         }}
       >
-        <Header />
         <Map />
       </Box>
     </>

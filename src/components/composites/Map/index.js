@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   GoogleMap,
   LoadScript,
@@ -7,10 +7,11 @@ import {
 } from "@react-google-maps/api";
 import raceTracks from "../../../assets/data/test_data.json";
 import MultiActionAreaCard from "../../muiCard";
+import PlacePhoto from "../../utility/PlacePhoto";
 
 const containerStyle = {
-  width: "100%",
-  innerHeight: "85vh",
+  width: "100vw",
+  height: "88vh",
 };
 
 const center = {
@@ -20,12 +21,11 @@ const center = {
 
 export default function Map() {
   const [selectedTrack, setSelectedTrack] = useState(null);
-
   return (
     <div>
       <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={8}>
-          {raceTracks.results.map((track) => {
+          {raceTracks.results.map((track) => (
             <Marker
               key={track.place_id}
               position={{
@@ -33,10 +33,10 @@ export default function Map() {
                 lng: track.geometry.location.lng,
               }}
               onClick={() => {
-                selectedTrack(track);
+                setSelectedTrack(track);
               }}
-            />;
-          })}
+            />
+          ))}
 
           {selectedTrack && (
             <InfoWindow
@@ -49,8 +49,11 @@ export default function Map() {
               }}
             >
               <div>
-                {/* <MultiActionAreaCard /> */}
-                <h4>selectedTrack.name</h4>
+                <MultiActionAreaCard
+                  mapTitle={selectedTrack.name}
+                  mapDescription={selectedTrack.formatted_address}
+                  mapImage={PlacePhoto(selectedTrack.photos[0].photo_reference)}
+                />
               </div>
             </InfoWindow>
           )}
