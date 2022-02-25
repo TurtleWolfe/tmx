@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   GoogleMap,
   LoadScript,
@@ -14,7 +14,7 @@ const containerStyle = {
   height: "88vh",
 };
 
-const center = {
+const mapCenterAnchor = {
   lat: 38.608662,
   lng: -77.338432,
 };
@@ -22,9 +22,13 @@ const center = {
 export default function Map() {
   const [selectedTrack, setSelectedTrack] = useState(null);
   return (
-    <div>
+    <>
       <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={8}>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={mapCenterAnchor}
+          zoom={8}
+        >
           {raceTracks.results.map((track) => (
             <Marker
               key={track.place_id}
@@ -48,17 +52,17 @@ export default function Map() {
                 setSelectedTrack(null);
               }}
             >
-              <div>
+              <>
                 <MultiActionAreaCard
                   mapTitle={selectedTrack.name}
                   mapDescription={selectedTrack.formatted_address}
                   mapImage={PlacePhoto(selectedTrack.photos[0].photo_reference)}
                 />
-              </div>
+              </>
             </InfoWindow>
           )}
         </GoogleMap>
       </LoadScript>
-    </div>
+    </>
   );
 }
