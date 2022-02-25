@@ -56,7 +56,10 @@ export default function Map() {
                 <MultiActionAreaCard
                   mapTitle={selectedTrack.name}
                   mapDescription={selectedTrack.formatted_address}
-                  mapImage={PlacePhoto(selectedTrack.photos[0].photo_reference)}
+                  mapImage={PlacePhoto(
+                    selectedTrack.photos[0].photo_reference,
+                    500
+                  )}
                 />
               </>
             </InfoWindow>
