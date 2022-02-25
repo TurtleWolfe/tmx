@@ -119,6 +119,9 @@ ENV/
 env.bak/ 
 venv.bak/ 
 
+# API
+.env.local
+
 # mkdocs documentation 
 /site 
 
@@ -149,4 +152,3 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
-
