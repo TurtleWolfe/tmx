@@ -10,10 +10,10 @@ export default function Footer(props) {
       sx={{
         width: 1,
         minHeight: "30px",
-        maxHeight: "60px",
+        // maxHeight: "60px",
         // bgcolor: "#f8f8ff",
         bgcolor: "primary.main",
-        borderTop: 2,
+        borderTop: 1,
         borderColor: "secondary.main",
         display: "flex",
         flexDirection: "row",
@@ -32,15 +32,13 @@ export default function Footer(props) {
           href="https://github.com/TurtleWolfe/tmx"
           underline="hover"
         >
-          <h3>
-            <span
-              role="img"
-              aria-label="moto cross"
-            >
-              🏍️
-            </span>
-            {' © 2022 tMX '}
-          </h3>
+          <span
+            role="img"
+            aria-label="moto cross"
+          >
+            🏍️
+          </span>
+          {' © 2022 tMX '}
         </Link>
       </Typography>
     </Paper>
