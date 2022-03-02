@@ -51,7 +51,10 @@ export default function Header() {
                 alignItems: "center",
               }}
             >
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+              <Typography variant="h4" sx={{
+                fontWeight: "bold",
+                color: "secondary.main",
+              }}>
                 🏍️ tMX
               </Typography>
               {/* <img
