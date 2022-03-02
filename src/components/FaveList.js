@@ -20,9 +20,8 @@ import PlacePhoto from "./utility/PlacePhoto";
 function srcset(image, width, height, rows = 1, cols = 1) {
   return {
     src: `${image}&w=${width * cols}&h=${height * rows}&fit=crop&auto=format`,
-    srcSet: `${image}&w=${width * cols}&h=${
-      height * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
+    srcSet: `${image}&w=${width * cols}&h=${height * rows
+      }&fit=crop&auto=format&dpr=2 2x`,
   };
 }
 
@@ -39,9 +38,9 @@ export default function CustomImageList() {
       }}
       rowHeight={200}
       gap={10}
-      // variant="quilted"
-      // variant="standard"
-      varinant="masonry"
+    // variant="quilted"
+    // variant="standard"
+    // variant="masonry"
     >
       {itemData.map((item) => {
         const cols = item.featured ? 2 : 1;
