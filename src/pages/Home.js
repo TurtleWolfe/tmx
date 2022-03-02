@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import FaveList from "../components/faveList";
+import FaveList from "../components/FaveList";
 // import svg_art from "../assets/coding_art.svg";
 // import MuiCard from "../components/muiCard";
 
