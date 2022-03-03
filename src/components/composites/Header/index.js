@@ -13,16 +13,18 @@ import {
   Home,
   HelpCenter,
   AccountBox,
+  Map,
 } from "@mui/icons-material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import HideOnScroll from "../../utility/HideOnScroll";
 import LinkTab from "./LinkTab";
-import img_logo from "../../../assets/joc_circle.png";
+import tmx_logo from "../../../assets/img/teamMX-logo.png";
 import { useAuthContext } from "../../../hooks/AuthContext";
 import getUserString from "../../../utils/getUserString";
 import stringAvatar from "../../../utils/stringAvatar";
 import LogOutConfirmation from "../forms/LogOutConfirmation";
+import theme from "../../../theme";
 
 export default function Header() {
   const location = useLocation();
@@ -40,8 +42,14 @@ export default function Header() {
 
   return (
     <HideOnScroll>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+      <Box
+        sx={{
+          flexGrow: 1,
+          width: "100%",
+          background: theme.palette.primary.mainGradient,
+        }}
+      >
+        <AppBar position="static" color="transparent">
           <Toolbar variant="dense">
             <Box
               sx={{
@@ -51,14 +59,18 @@ export default function Header() {
                 alignItems: "center",
               }}
             >
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                🏍️ tMX
-              </Typography>
-              {/* <img
-                alt="joy of coding logo"
-                src={img_logo}
+              <img
+                alt="off-road fun finder logo"
+                src={tmx_logo}
                 style={{ height: "64px", padding: "8px", marginRight: "8px" }}
-              /> */}
+              />
+              <Typography
+                variant="h4"
+                color="primary.contrastText"
+                sx={{ fontWeight: "bold" }}
+              >
+                Off-Road Fun Finder
+              </Typography>
             </Box>
             <Stack direction="row" alignItems="center" spacing={8}>
               <Tabs
@@ -73,12 +85,7 @@ export default function Header() {
                 }}
               >
                 <LinkTab to="/" value="/" icon={<Home />} label="HOME" />
-                <LinkTab
-                  to="/recipes"
-                  value="/recipes"
-                  icon={<LocalLibrary />}
-                  label="RECIPES"
-                />
+                <LinkTab to="/map" value="/map" icon={<Map />} label="MAP" />
                 <LinkTab
                   to="/help"
                   value="/help"

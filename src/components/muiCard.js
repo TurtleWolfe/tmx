@@ -8,26 +8,21 @@ import {
   CardContent,
   CardMedia,
   Typography,
-} from '@mui/material';
-import {
-  Favorite,
-  FavoriteBorder,
-  BrokenHeart
-} from "@mui/icons-material";
+} from "@mui/material";
+import { Favorite, FavoriteBorder, BrokenHeart } from "@mui/icons-material";
 
 export default function MultiActionAreaCard({
   mapImage,
   mapTitle,
   mapDescription,
-  mapLink
+  mapLink,
 }) {
-
   const [starred, setStarred] = useState(false);
 
   return (
     <Card
       sx={{
-        bgcolor: "primary.main",
+        bgcolor: "secondary.main",
         maxWidth: 345,
         margin: "auto",
         marginTop: "1rem",
@@ -41,7 +36,7 @@ export default function MultiActionAreaCard({
       <CardActionArea>
         <IconButton
           size="small"
-          color={starred ? "error" : "secondary"}
+          color={starred ? "error" : "primary"}
           variant="outlined"
           sx={{
             border: 2,
@@ -63,12 +58,12 @@ export default function MultiActionAreaCard({
           <Typography gutterBottom variant="h5" component="div">
             {mapTitle}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.primary">
             {mapDescription}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions
+      {/* <CardActions
         sx={{
           bgcolor: "secondary.main",
           borderRadius: "0.5rem",
@@ -79,7 +74,7 @@ export default function MultiActionAreaCard({
         >
           Share{" " + mapLink}
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }

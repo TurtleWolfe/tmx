@@ -1,18 +1,20 @@
 import { createTheme } from "@mui/material/styles";
+import createPalette from "@mui/material/styles/createPalette";
 
 const theme = createTheme({
-  palette: {
+  palette: createPalette({
     primary: {
-      light: "#ffff51",
-      main: "#ffcd00",
-      dark: "#c79d00",
-      contrastText: "#000",
+      light: "#fb5052",
+      main: "#c10c29",
+      dark: "#890000",
+      contrastText: "#fff",
+      mainGradient: "linear-gradient(to right bottom, #c00f29, #600815)",
     },
     secondary: {
-      light: "#979797",
-      main: "#696969",
-      dark: "#3e3e3e",
-      contrastText: "#fff",
+      light: "#fff554",
+      main: "#edc314",
+      dark: "#b69300",
+      contrastText: "#000",
     },
     info: {
       light: "#5ee1f6",
@@ -20,6 +22,9 @@ const theme = createTheme({
       dark: "#007f93",
       contrastText: "#000",
     },
+  }),
+  typography: {
+    fontFamily: ["Rubik", "Roboto"].join(","),
   },
 });
 
