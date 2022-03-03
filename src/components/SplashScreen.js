@@ -1,9 +1,9 @@
-import { Box } from "@mui/system";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/img/teamMX-logo.png";
 import "../assets/css/SplashScreen.css";
 import {
+  Box,
   Button,
   ButtonGroup,
   CircularProgress,
