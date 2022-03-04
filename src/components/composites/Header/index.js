@@ -7,7 +7,6 @@ import {
   Typography,
   Button,
   Avatar,
-  useMediaQuery,
 } from "@mui/material";
 import {
   LocalLibrary,
@@ -24,16 +23,12 @@ import { useAuthContext } from "../../../hooks/AuthContext";
 import getUserString from "../../../utils/getUserString";
 import stringAvatar from "../../../utils/stringAvatar";
 import LogOutConfirmation from "../forms/LogOutConfirmation";
-import MobileHeader from "./MobileHeader";
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const { userData } = useAuthContext();
   const [logOutModalOpen, setLogOutModalOpen] = useState(false);
-
-  //Test code for swapping headers
-  const showMobileHeader = useMediaQuery("(max-width:600px)");
 
   const handleModalOpen = () => {
     setLogOutModalOpen(true);
@@ -44,99 +39,87 @@ export default function Header() {
   };
 
   return (
-    <>
-      {showMobileHeader ? (
-        <MobileHeader
-          mainHeader="Hello, Guest!"
-          subHeader="Where are we going next?"
-        />
-      ) : (
-        <HideOnScroll>
-          <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-              <Toolbar variant="dense">
-                <Box
-                  sx={{
-                    flexGrow: 1,
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                    🏍️ tMX
-                  </Typography>
-                  {/* <img
+    <HideOnScroll>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar variant="dense">
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                🏍️ tMX
+              </Typography>
+              {/* <img
                 alt="joy of coding logo"
                 src={img_logo}
                 style={{ height: "64px", padding: "8px", marginRight: "8px" }}
               /> */}
-                </Box>
-                <Stack direction="row" alignItems="center" spacing={8}>
-                  <Tabs
-                    value={
-                      location.pathname === "/login" ? false : location.pathname
-                    }
-                    aria-label="nav tabs"
-                    textColor="secondary"
-                    indicatorColor="secondary"
+            </Box>
+            <Stack direction="row" alignItems="center" spacing={8}>
+              <Tabs
+                value={
+                  location.pathname === "/login" ? false : location.pathname
+                }
+                aria-label="nav tabs"
+                textColor="secondary"
+                indicatorColor="secondary"
+                sx={{
+                  paddingRight: "24px",
+                }}
+              >
+                <LinkTab to="/" value="/" icon={<Home />} label="HOME" />
+                <LinkTab
+                  to="/recipes"
+                  value="/recipes"
+                  icon={<LocalLibrary />}
+                  label="RECIPES"
+                />
+                <LinkTab
+                  to="/help"
+                  value="/help"
+                  icon={<HelpCenter />}
+                  label="HELP"
+                />
+                {!userData.loggedIn && (
+                  <LinkTab
+                    to="/login"
+                    value="/login"
+                    icon={<AccountBox />}
+                    label="LOGIN"
+                  />
+                )}
+              </Tabs>
+              {userData.loggedIn && (
+                <Stack sx={{ alignItems: "center", pt: 1 }}>
+                  <Avatar
+                    {...stringAvatar(getUserString(userData))}
+                    variant="rounded"
                     sx={{
-                      paddingRight: "24px",
+                      border: 1,
+                      borderColor: "white",
                     }}
+                    onClick={() => navigate("/profile")}
+                  />
+                  <Button
+                    variant="text"
+                    onClick={() => handleModalOpen()}
+                    color="secondary"
+                    sx={{ pt: 1 }}
                   >
-                    <LinkTab to="/" value="/" icon={<Home />} label="HOME" />
-                    <LinkTab
-                      to="/recipes"
-                      value="/recipes"
-                      icon={<LocalLibrary />}
-                      label="RECIPES"
-                    />
-                    <LinkTab
-                      to="/help"
-                      value="/help"
-                      icon={<HelpCenter />}
-                      label="HELP"
-                    />
-                    {!userData.loggedIn && (
-                      <LinkTab
-                        to="/login"
-                        value="/login"
-                        icon={<AccountBox />}
-                        label="LOGIN"
-                      />
-                    )}
-                  </Tabs>
-                  {userData.loggedIn && (
-                    <Stack sx={{ alignItems: "center", pt: 1 }}>
-                      <Avatar
-                        {...stringAvatar(getUserString(userData))}
-                        variant="rounded"
-                        sx={{
-                          border: 1,
-                          borderColor: "white",
-                        }}
-                        onClick={() => navigate("/profile")}
-                      />
-                      <Button
-                        variant="text"
-                        onClick={() => handleModalOpen()}
-                        color="secondary"
-                        sx={{ pt: 1 }}
-                      >
-                        LogOut
-                      </Button>
-                    </Stack>
-                  )}
+                    LogOut
+                  </Button>
                 </Stack>
-              </Toolbar>
-            </AppBar>
-            <LogOutConfirmation
-              onClose={handleModalClose}
-              open={logOutModalOpen}
-            />
-          </Box>
-        </HideOnScroll>
-      )}
-    </>
+              )}
+            </Stack>
+          </Toolbar>
+        </AppBar>
+        <LogOutConfirmation onClose={handleModalClose} open={logOutModalOpen} />
+      </Box>
+    </HideOnScroll>
   );
 }
