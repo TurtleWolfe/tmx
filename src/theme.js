@@ -8,7 +8,6 @@ const theme = createTheme({
       main: "#c10c29",
       dark: "#890000",
       contrastText: "#fff",
-      mainGradient: "linear-gradient(to right bottom, #c00f29, #600815)",
     },
     secondary: {
       light: "#fff554",

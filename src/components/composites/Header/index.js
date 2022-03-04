@@ -7,6 +7,7 @@ import {
   Typography,
   Button,
   Avatar,
+  useMediaQuery,
 } from "@mui/material";
 import {
   LocalLibrary,
@@ -24,12 +25,16 @@ import { useAuthContext } from "../../../hooks/AuthContext";
 import getUserString from "../../../utils/getUserString";
 import stringAvatar from "../../../utils/stringAvatar";
 import LogOutConfirmation from "../forms/LogOutConfirmation";
+import MobileHeader from "./MobileHeader";
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const { userData } = useAuthContext();
   const [logOutModalOpen, setLogOutModalOpen] = useState(false);
+
+  //Test code for swapping headers
+  const showMobileHeader = useMediaQuery("(max-width:600px)");
 
   const handleModalOpen = () => {
     setLogOutModalOpen(true);
@@ -39,7 +44,7 @@ export default function Header() {
     setLogOutModalOpen(false);
   };
 
-  return (
+return (
     <HideOnScroll>
       <Box
         sx={{

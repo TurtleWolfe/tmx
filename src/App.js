@@ -10,11 +10,13 @@ import Help from "./pages/Help";
 import TestingArea from "./pages/TestingArea";
 import LogIn from "./pages/LogIn";
 import Profile from "./pages/Profile";
+import SearchMap from "./pages/SearchMap";
 
 import { useAuthContext } from "./hooks/AuthContext";
 import { fetchUserData } from "./services/Auth";
 import PrivateRoute from "./components/utility/PrivateRoute";
-import SearchMap from "./pages/SearchMap";
+import SplashScreen from "./components/SplashScreen";
+
 
 export default function App() {
   const { setUserData } = useAuthContext();
@@ -53,6 +55,7 @@ export default function App() {
           />
           <Route path="/testing" element={<TestingArea />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/splash" element={<SplashScreen />} />
           <Route path="/map" element={<SearchMap />} />
         </Routes>
       </div>
