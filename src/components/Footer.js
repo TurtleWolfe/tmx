@@ -1,5 +1,4 @@
 import { Paper, Typography } from "@mui/material";
-import theme from "../theme";
 
 export default function Footer(props) {
   return (
@@ -7,7 +6,7 @@ export default function Footer(props) {
       sx={{
         width: 1,
         minHeight: "30px",
-        background: theme.palette.primary.mainGradient,
+        backgroundColor: "primary.main",
         borderTop: 1,
         borderColor: "secondary.main",
         display: "flex",

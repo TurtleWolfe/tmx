@@ -24,7 +24,6 @@ import { useAuthContext } from "../../../hooks/AuthContext";
 import getUserString from "../../../utils/getUserString";
 import stringAvatar from "../../../utils/stringAvatar";
 import LogOutConfirmation from "../forms/LogOutConfirmation";
-import theme from "../../../theme";
 
 export default function Header() {
   const location = useLocation();
@@ -45,11 +44,9 @@ export default function Header() {
       <Box
         sx={{
           flexGrow: 1,
-          width: "100%",
-          background: theme.palette.primary.mainGradient,
         }}
       >
-        <AppBar position="static" color="transparent">
+        <AppBar position="static">
           <Toolbar variant="dense">
             <Box
               sx={{
