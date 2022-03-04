@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tmx/static/css/main.de349701.css",
+    "main.js": "/tmx/static/js/main.3df41293.js",
+    "static/js/787.cda612ba.chunk.js": "/tmx/static/js/787.cda612ba.chunk.js",
+    "static/media/teamMX-logo.png": "/tmx/static/media/teamMX-logo.350980fa4cd1120b8af7.png",
+    "static/media/Oval-7.png": "/tmx/static/media/Oval-7.2662b30b1c9b0a843421.png",
+    "static/media/Oval-6.png": "/tmx/static/media/Oval-6.8a0cab97db39681fe16c.png",
+    "static/media/Oval-5.png": "/tmx/static/media/Oval-5.c32b09c98b2831abe3bc.png",
+    "static/media/Oval-3.png": "/tmx/static/media/Oval-3.709f5e85a6e1b5e2791d.png",
+    "index.html": "/tmx/index.html",
+    "main.de349701.css.map": "/tmx/static/css/main.de349701.css.map",
+    "main.3df41293.js.map": "/tmx/static/js/main.3df41293.js.map",
+    "787.cda612ba.chunk.js.map": "/tmx/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de349701.css",
+    "static/js/main.3df41293.js"
+  ]
+}
