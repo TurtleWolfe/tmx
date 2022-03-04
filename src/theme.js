@@ -1,7 +1,8 @@
 import { createTheme } from "@mui/material/styles";
+import createPalette from "@mui/material/styles/createPalette";
 
 const theme = createTheme({
-  palette: {
+  palette: createPalette({
     primary: {
       light: "#fb5052",
       main: "#c10c29",
@@ -20,6 +21,9 @@ const theme = createTheme({
       dark: "#007f93",
       contrastText: "#000",
     },
+  }),
+  typography: {
+    fontFamily: ["Rubik", "Roboto"].join(","),
   },
 });
 
