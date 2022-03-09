@@ -77,10 +77,8 @@ export default function CustomImageList() {
                 title={item.name}
                 subtitle={item.formatted_address}
                 color="primary"
-                // position="top"
                 actionIcon={
                   <IconButton
-                    // sx={{ color: 'primary.main' }}
                     color={starred ? "primary.main" : "error"}
                     aria-label={`star ${item.title}`}
                     onClick={() => {
