@@ -4,9 +4,6 @@ import {
   ImageList,
   ImageListItem,
   ImageListItemBar,
-  // ImageListItemText,
-  // ImageListItemImage,
-  // ImageListItemSecondaryAction,
   IconButton,
 } from "@mui/material";
 import {
@@ -41,9 +38,6 @@ export default function CustomImageList() {
         }}
         rowHeight={200}
         gap={10}
-        // variant="quilted"
-        // variant="standard"
-        // variant="masonry"
       >
         {itemData.map((item) => {
           const cols = item.featured ? 2 : 1;
