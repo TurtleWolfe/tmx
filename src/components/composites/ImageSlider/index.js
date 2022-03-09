@@ -4,6 +4,7 @@ import Image from "./Image";
 import ArrowButton from "./ArrowButton";
 
 // Code based on mui-image-slider of alielkhateeb
+// https://github.com/alielkhateeb/mui-image-slider
 
 const useStyles = makeStyles({
   root: {
@@ -34,7 +35,7 @@ const ImageSlider = (props) => {
     arrowsBgColor: "transparent",
     arrowsBgHoverColor: "#B9B9B95E",
     alwaysShowArrows: false,
-    fitToImageHeight: false,
+    fitToImageHeight: true,
   };
   let options = Object.assign({}, defaultOptions, props);
 

@@ -9,6 +9,9 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
+// Code based on mui-image-slider of alielkhateeb
+// https://github.com/alielkhateeb/mui-image-slider
+
 const useStyles = makeStyles({
   root: {
     display: "flex",

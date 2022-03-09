@@ -1,6 +1,9 @@
 import { makeStyles } from "@mui/styles";
 import { createTheme, ThemeProvider } from "@mui/system";
 
+// Code based on mui-image-slider of alielkhateeb
+// https://github.com/alielkhateeb/mui-image-slider
+
 const theme = createTheme();
 const useStyles = makeStyles({
   root: {
