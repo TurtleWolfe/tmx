@@ -58,7 +58,7 @@ const Image = (props) => {
             sx={{
               width: "200px",
               position: "relative",
-              backgroundColor: "secondary.main",
+              backgroundColor: "primary.contrastText",
               marginLeft: "10%",
               marginTop: "300px",
             }}

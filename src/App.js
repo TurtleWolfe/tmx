@@ -17,7 +17,6 @@ import { fetchUserData } from "./services/Auth";
 import PrivateRoute from "./components/utility/PrivateRoute";
 import SplashScreen from "./components/SplashScreen";
 
-
 export default function App() {
   const { setUserData } = useAuthContext();
 
@@ -31,7 +30,7 @@ export default function App() {
       <Header />
       <div
         style={{
-          minHeight: "75vh",
+          height: "75vh",
         }}
       >
         <Routes>
