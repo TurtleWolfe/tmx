@@ -1,7 +1,5 @@
-import RecipeCard from "../components/composites/RecipeCard";
 import { Box } from "@mui/material";
-import images from "../components/composites/ImageSlider/images";
-import ImageSlider from "../components/composites/ImageSlider";
+import SearchAppBar from "../components/searchAppBar";
 
 export default function TestingArea() {
   return (
@@ -15,7 +13,7 @@ export default function TestingArea() {
           flexDirection: "row",
         }}
       >
-        <ImageSlider images={images} autoPlay={true} />
+        <SearchAppBar />
       </Box>
     </>
   );

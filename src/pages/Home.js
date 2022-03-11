@@ -3,6 +3,7 @@ import FaveList from "../components/FaveList";
 import images from "../components/composites/ImageSlider/images";
 import ImageSlider from "../components/composites/ImageSlider";
 import { Search } from "@mui/icons-material";
+import SearchAppBar from "../components/searchAppBar";
 
 export default function Home() {
   return (
@@ -16,8 +17,8 @@ export default function Home() {
       }}
     >
       <ImageSlider images={images} autoPlay={true} />
-      <Box sx={{ padding: 2, width: "80%" }}>
-        <Input
+      <Box sx={{ paddingBottom: 2, width: "100%" }}>
+        {/* <Input
           id="search-bar"
           label="Search nearby tracks"
           placeholder="Search nearby tracks"
@@ -29,7 +30,8 @@ export default function Home() {
           }
           size="medium"
           fullWidth
-        />
+        /> */}
+        <SearchAppBar />
       </Box>
       <Box
         sx={{
